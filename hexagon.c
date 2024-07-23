@@ -9,13 +9,7 @@ struct scrPt
 {
 	GLint x, y;
 };
-void drawText(int x,int y, char *s){
-	int i;
-	glColor3f(0,0,0);
-	glRasterPos2i(x,y);
-	for(i=0;s[i]!='\0';i++)
-		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_12,s[i]);
-}
+
 static void init (void)
 {
 	struct scrPt hexVertex;
@@ -43,8 +37,6 @@ void displayHex (void)
 {
 	glClear (GL_COLOR_BUFFER_BIT);
 	glLoadIdentity();
-	drawText(-25,10,"Name");
-	drawText(-25,-10,"Usn");
 	glPushMatrix ( );
 	glRotatef (rotTheta, 0.0, 0.0, 1.0);
 	glCallList (regHex);
