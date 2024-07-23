@@ -26,13 +26,7 @@ void tetra(point a,point b,point c,point d) // representation of the tetrahedron
 	glColor3fv(colors[3]);
 	triangle(b,d,c); // face-4
 }
-void drawText(int x,int y, char *s){
-	int i=0;
-	glColor3f(1,0,0);
-	glRasterPos2i(x,y);
-	for(i=0;s[i]!='\0';i++)
-		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_12,s[i]);
-}
+
 void divide_tetra(point a,point b,point c,point d,int m) // perform division
 {
 	point mid[6];
@@ -60,8 +54,6 @@ void display()
 {
 	glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
 	glClearColor(1.0,1.0,1.0,1.0);
-	drawText(-8,9,"Name");
-	drawText(-8,8,"Usn");
 	divide_tetra(v[0],v[1],v[2],v[3],n);
 	glFlush();
 }
