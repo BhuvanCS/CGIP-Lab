@@ -16,18 +16,10 @@ void triangle()
 	glVertex2f(Triangle[0][2],Triangle[1][2]);
 	glEnd();
 }
-void drawText(int x,int y,char* s){
-	int i;
-	glColor3f(0,1,0);
-	glRasterPos2i(x,y);
-	for(i=0;s[i]!='\0';i++)
-		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_10,s[i]);
-}
+
 void display()
 {
 	glClear(GL_COLOR_BUFFER_BIT);
-	drawText(380,480,"Name");
-	drawText(380,465,"usn");
 	glColor3f(1,0,0);
 	triangle();
 	glTranslatef(m,n,0);
