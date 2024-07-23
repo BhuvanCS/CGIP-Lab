@@ -10,13 +10,7 @@ void triangle( GLfloat *a, GLfloat *b, GLfloat *c)
 	glVertex2fv(b);
 	glVertex2fv(c);
 }
-void drawText(int x,int y, char *s){
-	int i=0;
-	glColor3f(1,0,1);
-	glRasterPos2i(x,y);
-	for(i=0;s[i]!='\0';i++)
-		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_12,s[i]);
-}
+
 void divide_triangle(GLfloat *a, GLfloat *b, GLfloat *c, int m)
 {
 /* triangle subdivision using vertex numbers */
@@ -37,8 +31,6 @@ void divide_triangle(GLfloat *a, GLfloat *b, GLfloat *c, int m)
 void display()
 {
 	glClear(GL_COLOR_BUFFER_BIT);
-	drawText(1,3,"Name");
-	drawText(3,3,"Usn");
 	glColor3f(0.0,0.0,1.0);
 	glBegin(GL_TRIANGLES);
 	divide_triangle(v[0], v[1], v[2], n);
