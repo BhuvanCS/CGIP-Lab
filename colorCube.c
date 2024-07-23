@@ -34,19 +34,11 @@ void colorcube(void)
         polygon(4,5,6,7);
         polygon(0,1,5,4);
 }
-void drawText(int x,int y,char* s){
-	int i=0;
-	glColor3f(1,1,1);
-	glRasterPos2i(x,y);
-	for(i=0;s[i]!='\0';i++)
-		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_10,s[i]);
-}
+
 void display(void)
 {/* display callback, clear frame buffer and z buffer, rotate cube and draw, swap buffers */
  	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         glLoadIdentity();
-        drawText(-18,15,"Name");
-        drawText(15,15,"usn");
         glRotatef(theta[0], 1.0, 0.0, 0.0);
         glRotatef(theta[1], 0.0, 1.0, 0.0);
         glRotatef(theta[2], 0.0, 0.0, 1.0);
